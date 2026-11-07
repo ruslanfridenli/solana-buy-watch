@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{font-family:"Inter","Segoe UI",sans-serif;color:#202522;background:#f4f6f5;font-synthesis:none;text-rendering:optimizeLegibility;font-optical-sizing:auto}
+*{box-sizing:border-box}
+html,body,#root{margin:0;min-width:320px;min-height:100%;background:#f4f6f5}
+body{min-height:100vh}
+button,input{font:inherit}
+button{cursor:pointer}
+::selection{background:#bce7c9;color:#17241b}
+
+.app-shell{min-height:100vh;background:#f4f6f5;color:#252b27}
+.topbar{height:62px;position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid #e6e9e7;background:#fff}
+.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
+.brand-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:8px;background:#edf6ef;color:#397c4c}
+.brand>span:last-child{display:flex;flex-direction:column;gap:3px}
+.brand b{font-size:13px;font-weight:650;letter-spacing:-.03em}
+.brand small{color:#8b938d;font-size:9px}
+.topbar-status{display:flex;align-items:center;gap:8px;color:#737b75;font-size:10px}
+.topbar-status i{width:1px;height:14px;margin:0 3px;background:#e2e6e3}
+.status-dot{width:7px;height:7px;border-radius:50%;background:#bf8581}
+.status-dot.online{background:#56a66a}
+.ping{font-family:"DM Mono",monospace;color:#8b938d}
+.notification-setting{height:32px;display:flex;align-items:center;gap:7px;padding:0 10px;border:1px solid #e3e8e4;border-radius:6px;background:#fff;color:#5f6961;font-size:10px}
+.notification-setting:hover,.notification-setting.active{border-color:#d0e3d4;background:#f4f9f5;color:#39784a}
+.page{max-width:1180px;margin:0 auto;padding:35px 24px 0}
+.page-heading{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
+.eyebrow{margin:0 0 8px;color:#62826a;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.08em}
+.page-heading h1{margin:0;color:#252d27;font-size:25px;font-weight:600;letter-spacing:-.05em}
+.intro{margin:8px 0 0;color:#7a827c;font-size:12px}
+.connection-indicator{display:flex;align-items:center;gap:7px;padding:6px 9px;border:1px solid #e4e9e5;border-radius:5px;background:#fff;color:#7b837d;font-family:"DM Mono",monospace;font-size:9px}
+.connection-indicator .status-dot{width:6px;height:6px}
+.content-grid{display:grid;grid-template-columns:310px minmax(0,1fr);align-items:start;gap:16px}
+.sidebar{display:grid;gap:14px}
+.card{border:1px solid #e4e8e5;border-radius:8px;background:#fff;box-shadow:0 2px 6px #1c2a2008}
+.sidebar>.card{padding:16px}
+.card-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.card-heading h2,.purchases-heading h2{margin:0;color:#303832;font-size:13px;font-weight:600;letter-spacing:-.02em}
+.card-heading p,.purchases-heading p{margin:4px 0 0;color:#8a928c;font-size:10px}
+.card-icon{width:30px;height:30px;display:grid;place-items:center;border-radius:6px;background:#f2f7f3;color:#4d8b5a}
+.label{display:block;margin:11px 0 6px;color:#737b75;font-size:9px;font-weight:500}
+.label span{margin-left:4px;color:#a0a6a1;font-weight:400}
+.input-with-action{position:relative}
+.input-with-action input,.wallet-form>input{width:100%;height:35px;padding:0 10px;border:1px solid #e2e7e3;border-radius:5px;outline:none;background:#fff;color:#333b35;font-size:10px}
+.input-with-action input{padding-right:36px}
+.input-with-action input::placeholder,.wallet-form>input::placeholder{color:#a1a8a2}
+.input-with-action input:focus,.wallet-form>input:focus{border-color:#8fb998;box-shadow:0 0 0 2px #4c956211}
+.input-with-action button{position:absolute;top:1px;right:1px;width:33px;height:33px;display:grid;place-items:center;border:0;background:transparent;color:#89918a}
+.primary-button{height:35px;display:flex;align-items:center;justify-content:center;gap:7px;border:1px solid #3e8350;border-radius:5px;background:#458d58;color:#fff;font-size:10px;font-weight:500;transition:background .15s}
+.primary-button:hover{background:#36784a}
+.connect-button{width:100%;margin-top:11px}
+.private-note{margin:10px 0 0;color:#919992;font-size:9px}
+.wallet-card .card-heading{margin-bottom:13px}
+.wallet-count{padding:4px 7px;border-radius:4px;background:#f0f5f1;color:#62806a;font-family:"DM Mono",monospace;font-size:9px}
+.wallet-form{display:grid;gap:0}
+.wallet-form .label{margin-top:9px}
+.wallet-form .label:first-child{margin-top:0}
+.wallet-form>input{height:34px}
+.wallet-form .primary-button{width:100%;margin-top:11px}
+.file-input-hidden{display:none}
+.import-button{width:100%;height:33px;display:flex;align-items:center;justify-content:center;gap:7px;margin-top:8px;border:1px solid #e1e7e2;border-radius:5px;background:#fff;color:#5e7563;font-size:9px}
+.import-button:hover:not(:disabled){background:#f5f8f5}
+.import-button:disabled{opacity:.6}
+.import-note{margin:7px 0 0;color:#929a93;font-size:8px;line-height:1.5}
+.wallet-list{margin-top:13px}
+.wallet-row{min-height:48px;display:flex;align-items:center;gap:9px;border-top:1px solid #eff1ef}
+.wallet-avatar{width:28px;height:28px;display:grid;place-items:center;border:1px solid #e1ebe3;border-radius:7px;background:#f4f8f5;color:#50855c;font-size:11px;font-weight:600}
+.wallet-info{display:flex;flex:1;flex-direction:column;gap:3px;min-width:0}
+.wallet-info b{overflow:hidden;color:#49514b;font-size:10px;font-weight:500;text-overflow:ellipsis;white-space:nowrap}
+.wallet-info span{color:#8e968f;font-family:"DM Mono",monospace;font-size:8px}
+.remove-button{width:28px;height:28px;display:grid;place-items:center;border:0;border-radius:4px;background:transparent;color:#9aa19b}
+.remove-button:hover{background:#fbf4f3;color:#b56360}
+.empty-wallets{display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 8px 10px;color:#819185;text-align:center}
+.empty-wallets>span{color:#657069;font-size:10px}
+.empty-wallets small{color:#959c96;font-size:9px}
+.purchases-card{min-height:500px;overflow:hidden}
+.purchases-heading{min-height:67px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid #eceeec}
+.purchase-count{padding:5px 8px;border:1px solid #e8ebe8;border-radius:5px;color:#737b75;font-size:9px}
+.purchase-list{padding:4px 14px}
+.empty-purchases{min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center}
+.empty-icon{width:44px;height:44px;display:grid;place-items:center;border:1px solid #dfe9e1;border-radius:50%;background:#f5f9f6;color:#598a63}
+.empty-purchases h3{margin:15px 0 0;color:#454d47;font-size:13px;font-weight:550}
+.empty-purchases p{max-width:350px;margin:7px 0;color:#89918b;font-size:10px;line-height:1.7}
+.setup-hint{margin-top:7px;color:#6f8a75;font-size:9px}
+.purchase-item{display:flex;gap:12px;padding:16px 3px;border-bottom:1px solid #eceeec;animation:appear .18s ease-out}
+.purchase-item:last-child{border-bottom:0}
+.purchase-indicator{width:30px;height:30px;flex:none;display:grid;place-items:center;border:1px solid #d8eadc;border-radius:50%;background:#f2f8f3;color:#4a8b59}
+.purchase-content{flex:1;min-width:0}
+.purchase-top{display:flex;align-items:center;justify-content:space-between}
+.buy-label{padding:4px 6px;border:1px solid #dceade;border-radius:4px;background:#f4f9f5;color:#488455;font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.04em}
+.purchase-top time{color:#89918b;font-family:"DM Mono",monospace;font-size:9px}
+.purchase-content h3{margin:9px 0 5px;color:#303832;font-size:12px;font-weight:550}
+.purchase-meta{display:flex;flex-wrap:wrap;align-items:center;gap:7px;color:#707971;font-size:10px}
+.token-symbol{color:#4b8157;font-weight:600}
+.meta-separator{color:#c3c9c4}
+.purchase-address{height:32px;display:flex;align-items:center;gap:9px;margin-top:12px;padding:0 9px;border:1px solid #e8ebe8;border-radius:4px;background:#fafbfa;color:#858d86;font-size:9px}
+.purchase-address code{flex:1;overflow:hidden;color:#636c65;font-family:"DM Mono",monospace;font-size:9px;text-overflow:ellipsis}
+.purchase-address button{width:24px;height:24px;display:grid;place-items:center;border:0;background:transparent;color:#528a5e}
+.purchase-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.wallet-address,.purchase-bottom a{display:flex;align-items:center;gap:6px;border:0;background:transparent;color:#7b837c;font-size:9px;text-decoration:none}
+.wallet-address{padding:0}
+.wallet-address:hover,.purchase-bottom a:hover{color:#418150}
+.wallet-address svg:last-child{color:#9aa19b}
+.footer{display:flex;justify-content:space-between;padding:18px 0;color:#999f9a;font-size:9px}
+.toast{position:fixed;right:20px;bottom:20px;z-index:10;display:flex;align-items:center;gap:8px;padding:11px 13px;border:1px solid #d6e5d9;border-radius:6px;background:#fff;color:#407d4e;box-shadow:0 5px 20px #18251a14;font-size:10px;animation:appear .18s ease-out}
+.toast button{display:grid;place-items:center;margin-left:5px;border:0;background:transparent;color:#8c938d}
+@keyframes blink{50%{opacity:.5}}
+@keyframes appear{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){
+  .topbar{height:auto;min-height:58px;flex-wrap:wrap;gap:8px;padding:10px 14px}
+  .brand{flex:1}
+  .topbar-status{order:3;width:100%;padding-top:7px;border-top:1px solid #eff1ef}
+  .notification-setting{padding:0 8px;font-size:9px}
+  .page{padding:24px 12px 0}
+  .page-heading{align-items:flex-start;gap:10px}
+  .page-heading h1{font-size:20px;line-height:1.35}
+  .intro{max-width:310px;font-size:11px;line-height:1.6}
+  .connection-indicator{flex:none}
+  .content-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+  .purchases-card{min-height:430px;order:1}
+  .sidebar{order:2}
+  .empty-purchases{min-height:330px}
+  .footer{gap:12px;font-size:8px}
+}
+@media(max-width:390px){
+  .notification-setting span{max-width:104px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .page-heading h1{font-size:18px}
+  .connection-indicator{padding:5px 7px;font-size:8px}
+  .purchase-item{gap:8px}
+  .purchase-meta{gap:5px;font-size:9px}
+}
